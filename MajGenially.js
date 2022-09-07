@@ -45,12 +45,12 @@ const ouSommesNous = () => {
   for (let selecteur of tabSelecteursA){
     if (testMode(selecteur)){
       if(tabSelecteursA.indexOf(selecteur) === 0){
-        console.log('Index : '+ tabSelecteursA.indexOf(selecteur)+' mode édition');
+        //console.log('Index : '+ tabSelecteursA.indexOf(selecteur)+' mode édition');
         inEditor = true;
         elmtMaitre = document.querySelector(selecteur);
       }
       else{
-        console.log('Index : '+ tabSelecteursA.indexOf(selecteur)+' mode view, view social, ou preview');
+        //console.log('Index : '+ tabSelecteursA.indexOf(selecteur)+' mode view, view social, ou preview');
         inEditor = false;
         elmtMaitre = document.querySelector(selecteur);
       }
