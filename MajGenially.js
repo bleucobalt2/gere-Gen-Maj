@@ -12,10 +12,10 @@ let tabSelecteursA = Array.from(modeM,([clef, valeur]) => ([valeur]));
 
 
 /**
- * tableau des selecteurs des eléments 'wrappeur' ajoutés par génially
+ * tableau des selecteurs des eléments 'wrappeur' ajoutés par génially (prévoir une systématisation par type)
  * @type {string[]}
  */
-let methodeInsersionGenially =['.card-iframe', 'genially-view-rich-content', '.genially-view-item genially-view-group', 'genially-view-text', '.genially-view-item', '.genially-view-item.genially-view-group'];
+let methodeInsersionGenially =['.card-iframe', '.genially-view-rich-content', '.genially-view-item genially-view-group', '.genially-view-text', '.genially-view-item', '.genially-view-item.genially-view-group'];
 
 /**
  * Fonction générique qui teste l'existence d'un élément à partir d'un selecteur
@@ -39,7 +39,7 @@ let elmtMaitre;
 /**
  * Fonction qui detecte le mode (édition /view/preview) en allant chercher dans le tableau des selecteurs
  * s'arrete de parcourir le tableau quand il y a un match
- * fixe alors inEditor et elmtMaitre
+ * fixe alors inEditor et elmtMaitre en fonction du résultat
  */
 const ouSommesNous = () => {
   for (let selecteur of tabSelecteursA){
@@ -67,7 +67,10 @@ console.log('Dans l\'éditeur? : '+inEditor);
 console.log('Element maitre: '+elmtMaitre.className ? elmtMaitre.className : elmtMaitre.id);
 
 
-/*Exemples d'utilisation (à améliorer encore : systematisation du match)*/
+/*TESTS*/
+
+
+/*Exemples d'utilisation (à améliorer encore : systematisation des "match" par catégorie suivant la méthode précédente)*/
 
 /*1. Chercher et cacher un élément simple S'Cape comme une fonction en mode view ou preview*/
 if(!inEditor){
